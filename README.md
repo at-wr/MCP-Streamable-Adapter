@@ -278,4 +278,4 @@ JSON-RPC errors follow the standard format:
 
 ## License
 
-MIT License
+AGPLv3 License
