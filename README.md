@@ -31,10 +31,20 @@ FlowDown Client (Streamable HTTP) ──HTTP──> Adapter ──STDIO──> M
 - `GET /docs` - API documentation
 
 ## Installation
-
+### Without venv
 ```bash
 git clone https://github.com/at-wr/MCP-Streamable-Adapter
 cd MCP-Streamable-Adapter
+pip install -r requirements.txt
+```
+
+### With venv
+```bash
+git clone https://github.com/at-wr/MCP-Streamable-Adapter
+cd MCP-Streamable-Adapter
+python -m venv venv
+chmod +x activate.sh
+./activate.sh
 pip install -r requirements.txt
 ```
 
