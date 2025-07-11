@@ -34,6 +34,7 @@ FlowDown Client (Streamable HTTP) ──HTTP──> Adapter ──STDIO──> M
 
 ```bash
 git clone https://github.com/at-wr/MCP-Streamable-Adapter
+cd MCP-Streamable-Adapter
 pip install -r requirements.txt
 ```
 
