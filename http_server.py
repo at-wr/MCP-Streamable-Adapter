@@ -142,7 +142,7 @@ class MCPStreamableHTTPServer:
         @self.app.get("/")
         async def root():
             return {
-                "name": "MCP Streamable HTTP to STDIO Adapter",
+                "name": "FlowDown Adapter",
                 "version": "1.0.0",
                 "uptime": time.time() - self.startup_time,
                 "endpoints": {"servers": "/servers", "health": "/health", "mcp_pattern": "/servers/{server_name}/mcp"}
@@ -252,7 +252,7 @@ class MCPStreamableHTTPServer:
                         "result": {
                             "protocolVersion": "2025-03-26",
                             "serverInfo": {
-                                "name": "MCP Streamable HTTP Adapter",
+                                "name": "FlowDown Adapter",
                                 "version": "1.0.0"
                             },
                             "capabilities": {
