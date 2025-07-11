@@ -45,7 +45,6 @@ cd MCP-Streamable-Adapter
 python -m venv venv
 chmod +x activate.sh
 ./activate.sh
-pip install -r requirements.txt
 ```
 
 ## Configuration
