@@ -1,0 +1,38 @@
+{
+  "mcpServers": {
+    "fetch": {
+      "disabled": false,
+      "timeout": 60,
+      "command": "uvx",
+      "args": ["mcp-server-fetch"]
+    },
+    "github": {
+      "disabled": true,
+      "timeout": 60,
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "<YOUR_TOKEN>"
+      }
+    },
+    "filesystem": {
+      "disabled": true,
+      "timeout": 30,
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/alanye/Development"
+      ]
+    },
+    "brave-search": {
+      "disabled": true,
+      "timeout": 30,
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-brave-search"],
+      "env": {
+        "BRAVE_SEARCH_API_KEY": "<YOUR_API_KEY>"
+      }
+    }
+  }
+}

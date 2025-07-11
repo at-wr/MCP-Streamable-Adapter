@@ -1,0 +1,48 @@
+# MCP Streamable HTTP to STDIO Adapter Configuration
+
+# Server binding configuration
+host: "localhost"
+port: 8080
+debug: false
+
+# CORS settings
+cors_origins:
+  - "*"
+  # - "http://localhost:3000"
+  # - "https://yourdomain.com"
+
+# MCP STDIO servers to bridge
+servers:
+  # Example weather server
+  - name: "weather"
+    command: ["python", "-m", "weather_server"]
+    args: []
+    cwd: null
+    env:
+      API_KEY: "your-weather-api-key"
+    enabled: true
+
+  # Example file system server  
+  - name: "filesystem"
+    command: ["node", "filesystem-server.js"]
+    args: ["--allow-read", "--allow-write"]
+    cwd: "/path/to/server"
+    env:
+      NODE_ENV: "production"
+    enabled: true
+
+  # Example database server
+  - name: "database"
+    command: ["./database-server"]
+    args: ["--config", "db.conf"]
+    cwd: "/opt/mcp-servers/database"
+    env:
+      DB_URL: "postgresql://user:pass@localhost/db"
+    enabled: false  # Disabled by default
+
+# Usage:
+# - Each server will be available at: /servers/{name}/mcp
+# - Example endpoints:
+#   - POST http://localhost:8080/servers/weather/mcp
+#   - GET  http://localhost:8080/servers/weather/mcp
+#   - POST http://localhost:8080/servers/filesystem/mcp
